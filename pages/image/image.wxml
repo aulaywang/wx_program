@@ -1,0 +1,11 @@
+<!--pages/image/image.wxml-->
+<text>pages/image/image.wxml</text>
+<image src="../../assets/Lenna.png"></image>
+
+<button bindtap="handleChooseAlbum">选择图片</button>
+<image src="{{imagePath}}"/>
+<image wx:for='{{1}}'
+       src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"
+       bindload='handleImageLoad'
+       lazy-load="true"
+       show-menu-by-longpress/>
