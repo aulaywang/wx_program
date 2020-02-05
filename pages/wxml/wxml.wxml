@@ -1,0 +1,74 @@
+<!--pages/wxml/wxml.wxml-->
+<view>------Mustache------</view>
+<text>pages/wxml/wxml.wxml</text>
+<view>{{firstname}} {{lastname}}</view>
+<view>{{age >=18 ? '成年人':'未成年人'}}</view>
+<view>{{nowTime}}</view>
+
+<button size="mini" bindtap="handleSwitchColor">切换颜色</button>
+<view class="box {{isActive ? 'active':''}}">哈哈哈</view>
+
+
+
+
+<view>------条件判断------</view>
+<button size="mini" bindtap="handleSwitchShow">切换显示</button>
+<view wx:if='{{isShow}}'>哈哈哈</view>
+
+<button size="mini" bindtap="handleIncrement1">分数递增6</button>
+<button size="mini" bindtap="handleIncrement2">分数递减6</button>
+
+<view>{{score}}</view>
+<view wx:if='{{score >= 90}}'>优秀</view>
+<view wx:elif='{{score >= 80}}'>良好</view>
+<view wx:elif='{{score >= 60}}'>及格</view>
+<view wx:else>不及格</view>
+<button size="mini" bindtap="handleSwitchShow1">切换显示</button>
+<view hidden="{{isShow1}}">我是hidden属性控制的内容</view>
+<view wx:if="{{false}}">我是通过wx:if控制的内容</view>
+
+
+<view>------列表渲染------</view>
+<view wx:for = "{{['abc','bca','cba']}}" wx:key="key">{{item}} {{index}}</view>
+
+<block>
+  <view>哈哈哈</view>
+</block>
+
+<view wx:for="{{movies}}" wx:for-item="movie" wx:for-index="item" wx:key="key">{{movie}} {{item}}</view>
+
+<block wx:for="{{nums}}" wx:for-item="inner_nums" wx:key="key">
+  <block wx:for="{{inner_nums}}" wx:key="key">
+    <view>{{item}}</view>
+  </block>
+</block>
+
+<view>------key--------</view>
+
+<view wx:for="{{letters}}" wx:key="key">{{letters}}</view>
+
+<view>------template--------</view>
+
+<!-- <template name="contentItem">
+  <button size="mini">{{btnText}}</button>
+  <view>{{content}}</view>
+</template> -->
+
+<!-- <import src='/wxml/template.wxml'/> -->
+<import src='../../wxml/template.wxml'/>
+
+
+<template is="contentItem" data="{{btnText:'按钮',content:'哈哈哈'}}"></template>
+<template is="contentItem" data="{{btnText:'警告',content:'呵呵呵'}}"></template>
+<template is="contentItem" data="{{btnText:'点击',content:'嘿嘿嘿'}}"></template>
+<template is="contentItem" data="{{btnText:'登录',content:'嘻嘻嘻'}}"></template>
+
+
+
+
+
+
+
+
+
+
