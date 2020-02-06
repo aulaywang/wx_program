@@ -1,4 +1,35 @@
 <!--pages/home/home.wxml-->
-<text class="title">Hello World</text>
-<button size="mini">进入</button>
+<button bindtap="handleBtnClick">进入</button>
+<button bind:tap="handleBtnClick">进入</button>
+<button catch:tap="handleBtnClick">进入</button>
 
+<view class="box"
+      bind:touchstart="handleTouchStart"
+      bind:touchmove="handleTouchMove"
+      bind:touchend="handleTouchEnd"
+      bind:tap="handleTap"
+      bind:longpress="handleLongPress">
+
+
+</view>
+
+
+<button size="mini" 
+        bindtap="handleEventClick"
+        bindtouchend="handleEventEnd">按键</button>
+
+<view class="outer" id="outer" bindtap="handleOuter">
+  外层的view
+  <view class="inner" id="inner" bindtap="handleInner">内层的view</view>
+</view>
+
+<view class="container">
+  <block wx:for="{{titles}}" wx:key="{{index}}">
+    <view class="item" 
+          bindtap="handleItemClick"
+          data-index="{{index}}"
+          data-item="{{item}}">
+          {{item}}
+    </view>
+  </block>
+</view>
