@@ -1,4 +1,39 @@
 <!--pages/home/home.wxml-->
 <text class="title">Hello World</text>
 <button size="mini">进入</button>
+<view>-------自定义组件------</view>
+<mycpn></mycpn>
+<view>-------自定义组件样式细节------</view>
+<mystyle/>
+<view>-------给自定义组件传递数据/样式------</view>
+<myproperties title="哈哈哈" titleclass="green"/>
+<myproperties title="嘻嘻嘻" titleclass="red"/>
+<myproperties/>
+<view>-------组件内部发出事件------</view>
+<view>当前计数：{{counter}}</view>
+<myevent bind:increment="handleIncrement"/>
+<view>-------组件示例------</view>
+<wtab titles="{{['衣服','裤子','鞋子']}}"
+      bind:itemclick="handleTabClick"/>
+<view>-------直接选中组件修改数据/调用方法----</view>
+<button size="mini" bind:tap="handleIncrementCpn">修改组件内数据</button>
+<myselect class="sel-class" id="sel-id"/>
+<view>-------插槽示例------</view>
+<myslot>
+  <button size="mini">我是插入的按钮</button>
+</myslot>
+<myslot>
+  <slider value="50"></slider>
+</myslot>
+<view>-------多插槽示例------</view>
+<!-- 多插槽要把.js文件中的options的multipleSlots设为true -->
+<button size="mini" bind:tap="handleChangeShow">切换显示</button>
+<block wx:if="{{isShow}}">
+<mymultislot>
+  <button size="mini" slot="slot2">我是插入的按钮</button>
+  <slider slot="slot1"></slider>
+  <text slot="slot3">哈哈哈哈</text>
+</mymultislot>
+</block>
+
 
