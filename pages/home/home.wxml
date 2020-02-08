@@ -1,4 +1,14 @@
 <!--pages/home/home.wxml-->
 <text class="title">Hello World</text>
 <button size="mini">进入</button>
+<!-- Toast -->
+<button size="mini" bind:tap="handleShowToast">showToast</button>
 
+<!-- Modal -->
+<button size='mini' bind:tap="handleShowModal">showModal</button>
+
+<!-- Loading -->
+<button size='mini' bind:tap="handleShowLoading">showLoading</button>
+
+<!-- ActionSheet -->
+<button size='mini' bind:tap="handleShowAction">showAction</button>
